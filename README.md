@@ -1,1 +1,1 @@
-这是一个关于FreeRTOS的移植项目
+这是一个关于FreeModbus的移植项目
