@@ -72,13 +72,14 @@ void vTaskTaskModbus(void *pvParameters)
     usRegInputBuf[2] = 0x02;
     usRegInputBuf[3] = 0x03;
         
-    eMBInit(MB_RTU, 0x01, 1, 9600, MB_PAR_NONE);  //初始化FreeModbus
+    eMBInit(MB_RTU, 0x01, 1, 115200, MB_PAR_NONE);  //初始化FreeModbus
     
     eMBEnable();  //启动FreeModbus
         
     while(1)
     {
        (void)eMBPoll();  //查询数据帧
+        vTaskDelay(10);
     }
 }
 

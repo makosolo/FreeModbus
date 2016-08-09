@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\FreeRTOS_Demo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\FreeRTOS_Demo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Jul 26 14:00:27 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Aug 09 08:22:44 2016
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1163,6 +1163,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskTaskLED0
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskTaskLED1
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskTaskModbus
 </UL>
 
 <P><STRONG><a name="[9b]"></a>uxTaskPriorityGet</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, tasks.o(.text), UNUSED)
@@ -1421,12 +1422,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
-<P><STRONG><a name="[b7]"></a>vTaskTaskModbus</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[b7]"></a>vTaskTaskModbus</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = vTaskTaskModbus &rArr; eMBInit &rArr; eMBRTUInit &rArr; xMBPortSerialInit &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBPoll
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBInit
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBEnable
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
@@ -1824,13 +1826,13 @@ Global Symbols
 
 <P><STRONG><a name="[1ad]"></a>ExitCriticalSection</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, port_1.o(.text), UNUSED)
 
-<P><STRONG><a name="[c8]"></a>eMBRegInputCB</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, port_1.o(.text))
+<P><STRONG><a name="[c8]"></a>eMBRegInputCB</STRONG> (Thumb, 64 bytes, Stack size 12 bytes, port_1.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = eMBRegInputCB
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncReadInputRegister
 </UL>
 
-<P><STRONG><a name="[c7]"></a>eMBRegHoldingCB</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, port_1.o(.text))
+<P><STRONG><a name="[c7]"></a>eMBRegHoldingCB</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, port_1.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = eMBRegHoldingCB
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncReadWriteMultipleHoldingRegister
@@ -1839,7 +1841,7 @@ Global Symbols
 <LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncWriteHoldingRegister
 </UL>
 
-<P><STRONG><a name="[c4]"></a>eMBRegCoilsCB</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, port_1.o(.text))
+<P><STRONG><a name="[c4]"></a>eMBRegCoilsCB</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, port_1.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = eMBRegCoilsCB
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncWriteMultipleCoils

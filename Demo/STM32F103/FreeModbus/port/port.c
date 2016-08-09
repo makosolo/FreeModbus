@@ -83,8 +83,8 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
 	
 	//
 	//判断地址合法性
-	//
-	if ((usAddress >= REG_INPUT_START) && (usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS))
+	//为了避免警告，修改为有符号整数
+	if (((SHORT)usAddress >= REG_INPUT_START) && (usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS))
 	{
 		iRegIndex = (int)(usAddress - usRegInputStart);
 		while (usNRegs > 0)
@@ -129,8 +129,8 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 	
 	//
 	//判断地址是否合法
-	//
-	if((usAddress >= REG_HOLDING_START) && ((usAddress + usNRegs) <= (REG_HOLDING_START + REG_HOLDING_NREGS)))
+	//为了避免警告，修改为有符号整数
+	if(((SHORT)usAddress >= REG_HOLDING_START) && ((usAddress + usNRegs) <= (REG_HOLDING_START + REG_HOLDING_NREGS)))
 	{
 		iRegIndex = (int)(usAddress - usRegHoldingStart);
 		//
@@ -192,8 +192,8 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 	
 	//
 	//判断地址合法性
-	//
-	if ((usAddress >= REG_HOLDING_START) && ((usAddress + usNCoils) <= (REG_HOLDING_START + REG_HOLDING_NREGS)))
+	//为了避免警告，修改为有符号整数
+	if (((SHORT)usAddress >= REG_HOLDING_START) && ((usAddress + usNCoils) <= (REG_HOLDING_START + REG_HOLDING_NREGS)))
 	{
 		iRegIndex = (int)(usAddress - usRegHoldingStart);
 		//

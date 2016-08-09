@@ -58,9 +58,9 @@ typedef int32_t LONG;
                                定义Modbus相关参数
 ******************************************************************************/
 
-#define REG_INPUT_START                          (USHORT)0x0001  //起始寄存器
+#define REG_INPUT_START                          (USHORT)0x0000  //起始寄存器
 #define REG_INPUT_NREGS                          (USHORT)4       //寄存器个数
-#define REG_HOLDING_START                        (USHORT)0x0005  //保持寄存器
+#define REG_HOLDING_START                        (USHORT)0x0000  //保持寄存器
 #define REG_HOLDING_NREGS                        (USHORT)4       //保持寄存器个数
 
 /******************************************************************************
