@@ -68,12 +68,12 @@ vMBPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable )
 	
 	if (xTxEnable)  //发送使能
 	{
-		USART_ITConfig(MB_USART, USART_IT_TXE, ENABLE); //使能
+		USART_ITConfig(MB_USART, USART_IT_TC, ENABLE); //使能
 //		GPIO_SetBits(MB_GPIO_PORT_RE, MB_GPIO_PIN_RE);  //发送
 	}
 	else  //失能
 	{
-		USART_ITConfig(MB_USART, USART_IT_TXE, DISABLE); //失能
+		USART_ITConfig(MB_USART, USART_IT_TC, DISABLE); //失能
 //		GPIO_ResetBits(MB_GPIO_PORT_RE, MB_GPIO_PIN_RE); //设置接收
 	}
 }
@@ -199,9 +199,9 @@ void MB_USART_IRQHandler(void)
 		USART_ClearITPendingBit(MB_USART, USART_IT_RXNE);
 	}
 	
-	if (USART_GetITStatus(MB_USART, USART_IT_TXE) == SET)  //发送中断
+	if (USART_GetITStatus(MB_USART, USART_IT_TC) == SET)  //发送中断
 	{
 		prvvUARTTxReadyISR();
-		USART_ClearITPendingBit(MB_USART, USART_IT_TXE);
+		USART_ClearITPendingBit(MB_USART, USART_IT_TC);
 	}
 }
